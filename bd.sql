@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS public.users
     last_name character varying(255),
     username character varying(255),
     email character varying(255),
+    password character varyinh(255),
     date_registration date,
     birthday date,
     id_gender integer,
