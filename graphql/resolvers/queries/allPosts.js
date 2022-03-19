@@ -16,4 +16,4 @@ const AllPostsQuery = {
     },
 };
 
-module.exports = AllPostsQuery;
+module.exports = { AllPostsQuery };

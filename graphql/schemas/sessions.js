@@ -8,7 +8,7 @@ const {
     GraphQLDate
 } = require("graphql-iso-date");
 
-const GetSessions = GraphQLObjectType({
+const GetSessions = new GraphQLObjectType({
     name: "GetSessions",
     type: "query",
     fields: {
@@ -21,7 +21,7 @@ const GetSessions = GraphQLObjectType({
         referrer: { type: GraphQLString },
     }
 });
- const AddSession = GraphQLObjectType({
+ const AddSession = new GraphQLObjectType({
      name: "AddSession",
      type: "mutation",
      fields: {

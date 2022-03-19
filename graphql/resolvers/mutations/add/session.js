@@ -26,4 +26,4 @@ const AddSessionMutation = {
     },
 };
 
-modele.exports = AddSessionMutation;
+module.exports = { AddSessionMutation };

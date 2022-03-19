@@ -17,4 +17,4 @@ const PostQuery = {
     },
 };
 
-module.exports = PostQuery;
+module.exports = { PostQuery };

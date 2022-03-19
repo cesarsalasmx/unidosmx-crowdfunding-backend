@@ -11,10 +11,10 @@ const DonationQuery = {
         const values = [];
         const query = ``;
         return db
-        .one(query,values)
-        .then((res) => res )
-        .catch((err) => err );
+            .one(query,values)
+            .then((res) => res )
+            .catch((err) => err );
     },
 };
 
-module.exports = DonationQuery;
+module.exports = { DonationQuery };

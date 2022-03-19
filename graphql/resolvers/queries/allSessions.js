@@ -17,4 +17,4 @@ const AllSessionsQuery = {
     },
 };
 
-module.exports = AllSessionsQuery;
+module.exports = { AllSessionsQuery };

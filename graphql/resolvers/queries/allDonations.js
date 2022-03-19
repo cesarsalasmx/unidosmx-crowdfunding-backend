@@ -2,7 +2,7 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLList
 } = require("graphql");
-const GetDonation = require("../../schemas/Donations").GetDonation;
+const GetDonation = require("../../schemas/donations").GetDonation;
 
 const AllDonationQuery = {
     type: GraphQLList(GetDonation),
@@ -16,4 +16,4 @@ const AllDonationQuery = {
     },
 };
 
-module.exports = AllDonationQuery;
+module.exports = { AllDonationQuery };

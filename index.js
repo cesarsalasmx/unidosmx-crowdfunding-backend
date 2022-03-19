@@ -1,7 +1,7 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { GraphQLSchema } = require("graphql");
-const query = require("./graphql/resolvers/queries/index");
+const query = require("./graphql/resolvers/queries");
 const mutation = require("./graphql/resolvers/mutations");
 const schema = new GraphQLSchema({ query: query, mutation: mutation });
 

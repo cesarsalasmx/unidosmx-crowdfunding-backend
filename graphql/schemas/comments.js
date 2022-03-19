@@ -8,7 +8,7 @@ const {
     GraphQLDate
 } = require("graphql-iso-date");
 
-const GetComments = GraphQLObjectType ({
+const GetComments = new GraphQLObjectType ({
     name: "GetComments",
     type: "query",
     fields:{
@@ -23,7 +23,7 @@ const GetComments = GraphQLObjectType ({
         status: { type: GraphQLInt },
     }
 });
-const AddComment = GraphQLObjectType({
+const AddComment = new GraphQLObjectType({
     name: "AddComment",
     type: "mutation",
     fields: {

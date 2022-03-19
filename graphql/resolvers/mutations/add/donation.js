@@ -26,4 +26,4 @@ const AddDonationMutation = {
     },
 };
 
-modele.exports = AddDonationMutation;
+module.exports = { AddDonationMutation };

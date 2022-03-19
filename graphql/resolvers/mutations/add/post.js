@@ -27,4 +27,4 @@ const AddPostMutation = {
     },
 };
 
-modele.exports = AddPostMutation;
+module.exports = { AddPostMutation };

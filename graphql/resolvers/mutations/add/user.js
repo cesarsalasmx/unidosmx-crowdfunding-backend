@@ -32,4 +32,4 @@ const AddUserMutation = {
     },
 };
 
-modele.exports = AddUserMutation;
+module.exports = { AddUserMutation };

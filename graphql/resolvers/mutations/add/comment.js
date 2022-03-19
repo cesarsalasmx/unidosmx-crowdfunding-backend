@@ -28,4 +28,4 @@ const AddCommentMutation = {
     },
 };
 
-modele.exports = AddCommentMutation;
+module.exports = { AddCommentMutation };

@@ -9,7 +9,7 @@ const {
     GraphQLDate
 } = require("graphql-iso-date");
 
-const GetUser = GraphQLObjectType({
+const GetUser = new GraphQLObjectType({
     name: "GetUser",
     type: "query",
     fields: {
@@ -28,7 +28,7 @@ const GetUser = GraphQLObjectType({
     }
 });
 
-const AddUser = GraphQLObjectType({
+const AddUser = new GraphQLObjectType({
     name: "AddUser",
     type: "mutation",
     fields: {

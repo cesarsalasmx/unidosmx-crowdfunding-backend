@@ -17,4 +17,4 @@ const UserQuery = {
     },
 };
 
-module.exports = UserQuery;
+module.exports = { UserQuery };

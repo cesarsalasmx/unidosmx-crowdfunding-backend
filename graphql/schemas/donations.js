@@ -8,7 +8,7 @@ const {
     GraphQLDate
 } = require("graphql-iso-date");
 
-const GetDonation = GraphQLObjectType({
+const GetDonation = new GraphQLObjectType({
     name: "GetDonation",
     type: "query",
     fields: {
@@ -21,7 +21,7 @@ const GetDonation = GraphQLObjectType({
         id_payment: { type: GraphQLString },
     }
 });
-const AddDonation = GraphQLObjectType({
+const AddDonation = new GraphQLObjectType({
     name: "AddDonation",
     type: "mutation",
     fields: {

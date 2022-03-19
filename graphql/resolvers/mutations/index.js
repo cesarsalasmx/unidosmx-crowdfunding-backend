@@ -1,20 +1,20 @@
 const { GraphQLObjectType } = require("graphql");
-const { AddComment } = require("./add/comment");
-const { AddDonation } = require("./add/donation");
-const { AddPost } = require("./add/post");
-const { AddSession } = require("./add/session");
-const { AddUser } = require("./add/user");
+const { AddCommentMutation } = require("./add/comment");
+const { AddDonationMutation } = require("./add/donation");
+const { AddPostMutation } = require("./add/post");
+const { AddSessionMutation } = require("./add/session");
+const { AddUserMutation } = require("./add/user");
 
 const RootMutation = new GraphQLObjectType({
     name: "RootMutation",
     type: "Mutation",
     fields: {
-        AddComment,
-        AddDonation,
-        AddPost,
-        AddSession,
-        AddUser,
+        AddCommentMutation,
+        AddDonationMutation,
+        AddPostMutation,
+        AddSessionMutation,
+        AddUserMutation,
     },
 });
 
-modele.exports = RootMutation;
+module.exports = RootMutation;
