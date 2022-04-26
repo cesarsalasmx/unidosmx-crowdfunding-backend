@@ -14,7 +14,7 @@ const GetUser = new GraphQLObjectType({
     type: "query",
     fields: {
         id_user: { type: GraphQLInt },
-        first_nane: { type: GraphQLString },
+        first_name: { type: GraphQLString },
         last_name: { type: GraphQLString },
         username: { type: GraphQLString },
         email: { type: GraphQLString },
@@ -33,12 +33,12 @@ const AddUser = new GraphQLObjectType({
     type: "mutation",
     fields: {
         id_user: { type: GraphQLInt },
-        first_nane: { type: GraphQLString },
+        first_name: { type: GraphQLString },
         last_name: { type: GraphQLString },
         username: { type: GraphQLString },
         email: { type: GraphQLString },
         password: { type: GraphQLString },
-        date_registration: { GraphQLDate },
+        date_registration: {type: GraphQLDate },
         birthday: { type: GraphQLDate },
         id_genders: { type: GraphQLInt },
         status: { type: GraphQLBoolean },

@@ -1,6 +1,6 @@
 const { GraphQLObjectType } = require("graphql");
 //const { AllDonationQuery } = require("./allDonations");
-//const { AllPostsQuery } = require("./allPosts");
+const { AllPostsQuery } = require("./allPosts");
 //const { AllSessionsQuery } = require("./allSessions");
 const { DonationQuery } = require("./donations");
 const { PostQuery } = require("./post");
@@ -11,7 +11,7 @@ const RootQuery = new GraphQLObjectType({
     type: "Query",
     fields: {
         //AllDonationQuery,
-        //AllPostsQuery,
+        AllPostsQuery,
         //AllSessionsQuery,
         DonationQuery,
         PostQuery,

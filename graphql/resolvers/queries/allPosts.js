@@ -2,15 +2,15 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLList
 } = require("graphql");
-const GetPost = require("../../schemas/Posts").GetPost;
+const GetAllPosts = require("../../schemas/Posts").GetAllPosts;
 
 const AllPostsQuery = {
-    type: GraphQLList(GetPost),
+    type: GraphQLList(GetAllPosts),
     resolve(parentValue, args){
-        const values = [];
-        const query = ``;
+        const values = true;
+        const query = `SELECT * FROM view_causes`;
         return db
-        .one(query,values)
+        .many(query,values)
         .then((res) => res )
         .catch((err) => err );
     },

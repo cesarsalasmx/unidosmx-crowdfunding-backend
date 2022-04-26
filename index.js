@@ -4,10 +4,10 @@ const { GraphQLSchema } = require("graphql");
 const query = require("./graphql/resolvers/queries");
 const mutation = require("./graphql/resolvers/mutations");
 const schema = new GraphQLSchema({ query: query, mutation: mutation });
-
+const cors = require("cors");
 
 const app = express();
-app.use('/graphql', graphqlHTTP({
+app.use('/graphql', cors(),graphqlHTTP({
   schema: schema,
   graphiql: true,
 }));

@@ -1,14 +1,13 @@
-CREATE DATABASE unidosmx-corwdfunding IF NOT EXISTS
-USE unidosmx-corwdfunding
+CREATE DATABASE unidosmxCf;
 
 CREATE TABLE IF NOT EXISTS public.users
 (
-    id integer,
+    id serial NOT NULL,
     first_name character varying(255),
     last_name character varying(255),
     username character varying(255),
     email character varying(255),
-    password character varyinh(255),
+    password character varying(255),
     date_registration date,
     birthday date,
     id_gender integer,
@@ -19,11 +18,11 @@ CREATE TABLE IF NOT EXISTS public.users
 );
 
 ALTER TABLE public.users
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 CREATE TABLE IF NOT EXISTS public.comments
 (
-    id integer,
+    id serial NOT NULL,
     id_post integer,
     id_author integer,
     author_name character varying(255),
@@ -36,22 +35,22 @@ CREATE TABLE IF NOT EXISTS public.comments
 );
 
 ALTER TABLE public.comments
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 CREATE TABLE IF NOT EXISTS public.options
 (
-    id integer,
+    id serial NOT NULL,
     name character varying(255),
     value character varying(255),
     PRIMARY KEY (id)
 );
 
 ALTER TABLE public.options
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 CREATE TABLE IF NOT EXISTS public.donations
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     user_id integer,
     post_id integer,
     date date,
@@ -59,31 +58,32 @@ CREATE TABLE IF NOT EXISTS public.donations
     amount character varying(100),
     id_payment character varying(255),
     PRIMARY KEY (id)
-)
+);
 
 ALTER TABLE public.donations
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 CREATE TABLE IF NOT EXISTS public.posts
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     author integer,
     date date,
     content text,
     title character varying(255),
+    slug character varying(255),
     id_status integer,
     id_type integer,
     image character varying(255),
     id_category integer,
     PRIMARY KEY (id)
-)
+);
 
 ALTER TABLE public.posts
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 CREATE TABLE IF NOT EXISTS public.sessions
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     id_post integer,
     ip character varying(100),
     browser character varying(255),
@@ -91,10 +91,10 @@ CREATE TABLE IF NOT EXISTS public.sessions
     device character varying(255),
     referrer character varying(255),
     PRIMARY KEY (id)
-)
+);
 
 ALTER TABLE public.sessions
-    OWNER to postgres;
+    OWNER to cesarsalas;
 
 /* ***** Constrains table posts  ***** */
 ALTER TABLE public.posts
