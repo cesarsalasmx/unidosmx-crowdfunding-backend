@@ -4,7 +4,7 @@ const {
     GraphQLString,
 } = require ("graphql");
 const { GraphQLDate } = require("graphql-iso-date");
-const AddSession = require("../../../schemas/Sessions").AddSession;
+const AddSession = require("../../../schemas/sessions").AddSession;
 
 const AddSessionMutation = {
     type: AddSession,

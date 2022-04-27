@@ -4,7 +4,7 @@ const {
     GraphQLString,
 } = require ("graphql");
 const { GraphQLDate } = require("graphql-iso-date");
-const AddDonation = require("../../../schemas/Donations").AddDonation;
+const AddDonation = require("../../../schemas/donations").AddDonation;
 
 const AddDonationMutation = {
     type: AddDonation,

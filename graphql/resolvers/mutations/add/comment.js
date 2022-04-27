@@ -4,7 +4,7 @@ const {
     GraphQLString,
 } = require ("graphql");
 const { GraphQLDate } = require("graphql-iso-date");
-const AddComment = require("../../../schemas/Comments").AddComment;
+const AddComment = require("../../../schemas/comments").AddComment;
 
 const AddCommentMutation = {
     type: AddComment,
