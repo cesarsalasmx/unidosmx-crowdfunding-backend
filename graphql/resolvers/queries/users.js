@@ -2,7 +2,7 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLID
 } = require("graphql");
-const GetUser = require("../../schemas/Users").GetUser;
+const GetUser = require("../../schemas/users").GetUser;
 
 const UserQuery = {
     type: GetUser,

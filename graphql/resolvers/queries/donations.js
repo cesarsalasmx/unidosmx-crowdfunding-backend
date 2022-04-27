@@ -2,7 +2,7 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLID
 } = require("graphql");
-const GetDonation = require("../../schemas/Donations").GetDonation;
+const GetDonation = require("../../schemas/donations").GetDonation;
 
 const DonationQuery = {
     type: GetDonation,

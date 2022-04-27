@@ -2,7 +2,7 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLID
 } = require("graphql");
-const GetSessions = require("../../schemas/Sessions").GetSessions;
+const GetSessions = require("../../schemas/sessions").GetSessions;
 
 const AllSessionsQuery = {
     type: GetSessions,
