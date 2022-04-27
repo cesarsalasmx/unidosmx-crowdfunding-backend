@@ -2,7 +2,7 @@ const { db } = require("../../../lib/postgres");
 const {
     GraphQLList
 } = require("graphql");
-const GetAllPosts = require("../../schemas/Posts").GetAllPosts;
+const GetAllPosts = require("../../schemas/posts").GetAllPosts;
 
 const AllPostsQuery = {
     type: GraphQLList(GetAllPosts),
