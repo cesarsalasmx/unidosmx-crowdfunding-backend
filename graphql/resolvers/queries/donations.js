@@ -9,7 +9,7 @@ const DonationQuery = {
     args: { id: { type: GraphQLID }},
     resolve(parentValue, args){
         const values = [];
-        const query = ``;
+        const query = `SELECT * FROM public.posts WHERE id=$1`;
         return db
             .one(query,values)
             .then((res) => res )

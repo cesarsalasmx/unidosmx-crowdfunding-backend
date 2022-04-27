@@ -8,7 +8,7 @@ const AllDonationQuery = {
     type: GraphQLList(GetDonation),
     resolve(parentValue, args){
         const values = [];
-        const query = ``;
+        const query = `SELECT * FROM view_donations`;
         return db
         .one(query,values)
         .then((res) => res )

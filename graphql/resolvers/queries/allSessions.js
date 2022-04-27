@@ -9,7 +9,7 @@ const AllSessionsQuery = {
     args: { id: { type: GraphQLID }},
     resolve(parentValue, args){
         const values = [];
-        const query = ``;
+        const query = `SELECT * FROM view_sesions`;
         return db
         .one(query,values)
         .then((res) => res )
