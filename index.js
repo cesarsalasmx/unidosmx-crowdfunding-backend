@@ -6,7 +6,6 @@ const query = require("./graphql/resolvers/queries");
 const mutation = require("./graphql/resolvers/mutations");
 const schema = new GraphQLSchema({ query: query, mutation: mutation });
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const { ApolloCache } = require("@apollo/client");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
