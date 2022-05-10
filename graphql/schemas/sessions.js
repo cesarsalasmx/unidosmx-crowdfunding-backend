@@ -13,7 +13,7 @@ const GetSessions = new GraphQLObjectType({
     type: "query",
     fields: {
         id: { type: GraphQLInt },
-        id_post: { type: GraphQLInt },
+        page_name: { type: GraphQLString },
         ip: { type: GraphQLString },
         browser: { type: GraphQLString },
         date: { type: GraphQLDate },
@@ -26,7 +26,7 @@ const GetSessions = new GraphQLObjectType({
      type: "mutation",
      fields: {
         id: { type: GraphQLInt },
-        id_post: { type: GraphQLInt },
+        page_name: { type: GraphQLString },
         ip: { type: GraphQLString },
         browser: { type: GraphQLString },
         date: { type: GraphQLDate },

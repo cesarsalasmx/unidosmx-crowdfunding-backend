@@ -9,7 +9,7 @@ const AddSession = require("../../../schemas/sessions").AddSession;
 const AddSessionMutation = {
     type: AddSession,
     args: {
-        id_post: { type: GraphQLInt },
+        page_name: { type: GraphQLString },
         ip: { type: GraphQLString },
         browser: { type: GraphQLString },
         date: { type: GraphQLDate },
@@ -17,8 +17,15 @@ const AddSessionMutation = {
         referrer: { type: GraphQLString },
     },
     resolve(parentValue, args){
-        const values = [];
-        const query = "";
+        const values = [
+            args.page_name,
+            args.ip,
+            args.browser,
+            args.date,
+            args.device,
+            args.referrer,
+        ];
+        const query = "INSERT INTO public.sessions(ip, browser, date, device, referrer, page_name)	VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING";
         return db
             .one(query, values)
             .then((res) => res)

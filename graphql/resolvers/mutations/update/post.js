@@ -1,28 +1,37 @@
 const { db } = require("../../../../lib/postgres");
-
 const {
+    GraphQLID,
     GraphQLInt,
     GraphQLString
 } = require ("graphql");
 const { GraphQLDate } = require("graphql-iso-date");
 const AddPost = require("../../../schemas/posts").AddPost;
 
-const AddPostMutation = {
+const UpdatePostMutation = {
     type: AddPost,
     args: {
-        author: { type: GraphQLInt },
+        id: { type: GraphQLID},
         date: { type: GraphQLDate },
         content: { type: GraphQLString },
         title: { type: GraphQLString },
         status: { type: GraphQLInt },
         image: { type: GraphQLString },
         category: { type: GraphQLString },
+        slug: {type: GraphQLString},
     },
     resolve(parentValue, args){
         var slug = args.slug.toLowerCase().split(' ').join('-');
-        const values = [args.content,args.title,slug,args.image,args.category];
+        const values = [
+            args.date,
+            args.content,
+            args.title,
+            slug,
+            args.image,
+            args.category,
+            args.id
+        ];
         
-        const query = "INSERT INTO public.posts( author, date, content, title, slug, id_status, id_type, image, category) VALUES ('1', '02-05-2022', $1, $2, $3, 5, 5, $4, $5) RETURNING slug;";
+        const query = "UPDATE public.posts	SET date=$1, content=$2, title=$3, slug=$4, image=$5, category=$6	WHERE id=$7 RETURNING id";
         return db
             .one(query, values)
             .then((res) => res)
@@ -30,4 +39,4 @@ const AddPostMutation = {
     },
 };
 
-module.exports = { AddPostMutation };
+module.exports = { UpdatePostMutation };

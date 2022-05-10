@@ -8,7 +8,7 @@ const AllPostsQuery = {
     type: GraphQLList(GetAllPosts),
     resolve(parentValue, args){
         const values = true;
-        const query = `SELECT * FROM view_causes`;
+        const query = `SELECT * FROM view_causes WHERE value='Publicado'`;
         return db
         .many(query,values)
         .then((res) => res )
