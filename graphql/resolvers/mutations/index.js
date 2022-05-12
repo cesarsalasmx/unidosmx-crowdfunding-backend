@@ -6,7 +6,8 @@ const { AddSessionMutation } = require("./add/session");
 const { AddUserMutation } = require("./add/user");
 const { UpdatePostMutation } = require("./update/post");
 const { DeletePostMutation } = require("./delete/post");
-
+const { loginUserMutation } = require("./users/login");
+const { ViewUser } = require("./users/viewUser");
 const RootMutation = new GraphQLObjectType({
     name: "RootMutation",
     type: "Mutation",
@@ -17,7 +18,9 @@ const RootMutation = new GraphQLObjectType({
         AddSessionMutation,
         AddUserMutation,
         UpdatePostMutation,
-        DeletePostMutation
+        DeletePostMutation,
+        loginUserMutation,
+        ViewUser
     },
 });
 module.exports = RootMutation;

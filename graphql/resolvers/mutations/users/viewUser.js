@@ -1,10 +1,10 @@
-const { db } = require("../../../lib/postgres");
-const { GraphQLString } = require("graphql");
-const GetUser = require("../../schemas/users").GetUser;
+const { db } = require("../../../../lib/postgres");
+const { GraphQLInt } = require("graphql");
+const ViewUserMutation = require("../../../schemas/users").ViewUserMutation;
 
-const UserQuery = {
-    type: GetUser,
-    args: { id: { type: GraphQLString }},
+const ViewUser = {
+    type: ViewUserMutation,
+    args: { id: { type: GraphQLInt }},
     resolve(parentValue, args){
         const values = [args.id];
         const query = `SELECT id, first_name, last_name, username, email, password, date_registration, birthday, value, status, country FROM public.view_users_donations WHERE id=$1`;
@@ -15,4 +15,4 @@ const UserQuery = {
     },
 };
 
-module.exports = { UserQuery };
+module.exports = { ViewUser };

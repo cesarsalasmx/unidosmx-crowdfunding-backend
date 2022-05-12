@@ -21,9 +21,8 @@ const GetUser = new GraphQLObjectType({
         password: { type: GraphQLString },
         date_registration: { type: GraphQLDate },
         birthday: { type: GraphQLDate },
-        id_gender: { type: GraphQLInt },
+        value: { type: GraphQLString },
         status: { type: GraphQLBoolean },
-        id_role: { type: GraphQLInt },
         country: { type: GraphQLString },
     }
 });
@@ -46,4 +45,21 @@ const AddUser = new GraphQLObjectType({
     }
 });
 
-module.exports = { GetUser, AddUser };
+const ViewUserMutation = new GraphQLObjectType({
+    name: "viewUserMutation",
+    type: "mutation",
+    fields: {
+        id: { type: GraphQLInt },
+        first_name: { type: GraphQLString },
+        last_name: { type: GraphQLString },
+        email: { type: GraphQLString },
+        password: { type: GraphQLString },
+        date_registration: {type: GraphQLDate },
+        birthday: { type: GraphQLDate },
+        value: { type: GraphQLString },
+        status: { type: GraphQLBoolean },
+        roles: { type: GraphQLString },
+        country: { type: GraphQLString },
+    }
+});
+module.exports = { GetUser, AddUser, ViewUserMutation};

@@ -1,10 +1,8 @@
-const db = require("../../../../lib/postgres");
+const { db } = require("../../../../lib/postgres");
 const {
-    GraphQLInt,
     GraphQLString,
 } = require ("graphql");
-const { GraphQLDate } = require("graphql-iso-date");
-const AddSession = require("../../../schemas/sessions").AddSession;
+const { AddSession } = require("../../../schemas/sessions");
 
 const AddSessionMutation = {
     type: AddSession,
@@ -12,24 +10,24 @@ const AddSessionMutation = {
         page_name: { type: GraphQLString },
         ip: { type: GraphQLString },
         browser: { type: GraphQLString },
-        date: { type: GraphQLDate },
         device: { type: GraphQLString },
         referrer: { type: GraphQLString },
     },
     resolve(parentValue, args){
+        let date = new Date(); 
         const values = [
-            args.page_name,
             args.ip,
             args.browser,
-            args.date,
+            date,
             args.device,
             args.referrer,
+            args.page_name,
         ];
-        const query = "INSERT INTO public.sessions(ip, browser, date, device, referrer, page_name)	VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING";
+        const query = "INSERT INTO public.sessions(ip, browser, date, device, referrer, page_name)	VALUES ($1, $2, $3, $4, $5, $6) RETURNING id";
         return db
             .one(query, values)
             .then((res) => res)
-            .catch((err) => err);
+            .catch((err) =>err);
     },
 };
 

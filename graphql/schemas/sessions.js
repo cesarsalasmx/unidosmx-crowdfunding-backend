@@ -29,7 +29,6 @@ const GetSessions = new GraphQLObjectType({
         page_name: { type: GraphQLString },
         ip: { type: GraphQLString },
         browser: { type: GraphQLString },
-        date: { type: GraphQLDate },
         device: { type: GraphQLString },
         referrer: { type: GraphQLString },
     }

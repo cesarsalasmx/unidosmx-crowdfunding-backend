@@ -1,27 +1,24 @@
-const db = require("../../../../lib/postgres");
+const { auth } = require("./../../../../lib/auth");
+require("dotenv").config();
+const SECRET = process.env.SECRET;
 const {
-    GraphQLInt,
     GraphQLString,
-    GraphQLBoolean,
 } = require ("graphql");
 const bcript = require("bcrypt");
 const { GraphQLDate } = require("graphql-iso-date");
-const UserQuery = require("../../queries/users").UserQuery;
+const { loginUser } = require("../../../schemas/login");
 
-const AddUserMutation = {
-    type: UserQuery,
+const loginUserMutation = {
+    type: loginUser,
     args: {
         email: { type: GraphQLString },
         password: { type: GraphQLString },
     },
     resolve(parentValue, args){
-        const values = [];
+        
         const query = "";
-        return db
-            .one(query, values)
-            .then((res) => res)
-            .catch((err) => err);
+        return auth.login(args.email,args.password);
     },
 };
 
-module.exports = { AddUserMutation };
+module.exports = { loginUserMutation };

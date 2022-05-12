@@ -194,3 +194,19 @@ INSERT INTO public.posts(
 	VALUES (1, '01-04-1997', '<p>Reforestamos en comunidad junto a niñas, niños y jóvenes árboles nativos en la Riviera maya para garantizar un futuro sostenible.</p>', 'Reforesta Cancún', 'reforesta-cancun', 5, 5, '', 'Reforestación'),
 	(1, '01-04-1997', '<p> Festival de arte público que busca llenar de color Cancún. Realizamos murales con mensajes positivos. </p>', 'Sonríe', 'sonrie', 5, 5, '', 'Arte'),
 	(1, '01-04-1997', '<p> Intervenimos positivamente escuelas públicas primarias en situación vulnerable a través de la restauración de espacios </p>', 'Soy Futuro', 'soy-futuro', 5, 5, '', 'Recuperación');
+
+/* View Users Donations*/
+CREATE VIEW view_users_donations AS SELECT 
+	users.id,
+	users.first_name,
+	users.last_name,
+	users.username,
+	users.email,
+	users.password,
+	users.date_registration,
+	users.birthday,
+	options.value,
+	users.status,
+	users.country,
+FROM users INNER JOIN options
+ON users.id_gender=options.id
